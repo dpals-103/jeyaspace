@@ -1,5 +1,9 @@
 /*custom*/
-#con-wrap{max-width: 1160px; margin: 0 auto;}
+
+
+.con-wrap{min-width: 1160px; margin: 0 auto;}
+.con-max-width {max-width: 1160px; margin: 0 auto; padding: 0 20px; box-sizing: border-box;}
+.flex{display: flex;}
 
 
 /*col*/
@@ -13,6 +17,21 @@
 /*margin*/
 .mb40{margin-bottom: 40px!important;}
 .mb80{margin-bottom: 80px!important;}
+
+
+/*text*/
+h1{font-size: 4.5rem !important;}
+h2{font-size: 4rem !important;}
+h3{font-size: 3.5rem !important;}
+h4{font-size: 3rem !important;}
+h5{font-size: 2rem !important;}
+h6{font-size: 1.5rem !important;}
+
+.sub_title{
+    font-family: 'Newyork';
+    text-transform: uppercase;
+    letter-spacing: 1rem;
+}
 
 /*나중에 지울거*/
 .grid {border : 1px solid #808080 !important;}
