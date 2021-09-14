@@ -95,12 +95,44 @@ section{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
 #home > div:nth-child(2) >img{
     margin-bottom: 25px;
-    width: 90%;
     margin-top:64px;
+}
+
+#home > div:nth-child(2) > .img_1{
+    position: absolute;
+    z-index: 10;
+    top : -10%;
+    transform-origin: bottom center;
+    animation: play-state 10s linear infinite;
+    animation-name: rotate;
+}
+
+@-webkit-keyframes rotate{
+    20%{
+        transform: rotate(72deg);
+    }
+
+    40%{
+        transform: rotate(144deg);
+    }
+    
+    60%{
+        transform: rotate(216deg);
+    }
+    
+    80%{
+        transform:rotate(288deg);
+    }
+    
+    100%{
+        transform:rotate(360deg);
+    }
+
 }
 
 #home > div:nth-child(2) > .scroll{
@@ -213,7 +245,7 @@ section{
 #works li > div:nth-child(2) > h6{
     color: #4C6030;
     font-weight: 700;
-    margin-bottom: 56px;
+    margin-bottom: 65px;
 }
 
 #works li > div:nth-child(2) > span{
@@ -225,5 +257,88 @@ section{
 #works li > img{
     width: 640px;
     height: 240px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+
+/*section4 - qna*/ 
+#qna{
+    padding : 80px 20px;
+}
+
+#qna > .chat{
+    width: 460px;
+    height: 680px;
+    background-color: #F5F5F5;
+    box-shadow: -30px 30px 100px 0 rgba(0,0,0,0.15);
+    position: relative;
+}
+
+#qna > .chat::after{
+    content: '';
+    display: block;
+    width: 420px;
+    height: 560px;
+    background-image: url('../img/section4.jpg');
+    position: absolute;
+    z-index: -5;
+    top : 20%;
+    left: 50%;
+}
+
+#qna > .q_list{
+    margin-left: 175px;
+}
+
+#qna > .q_list > h3{
+    margin-bottom: 16px;
+}
+
+#qna > .q_list > ul{
+    margin-top: 307px;
+}
+
+#qna > .q_list > ul > li{
+    background-color: #ffffff;
+    line-height: 60px;
+    width: 485px;
+    margin-bottom: 30px;
+    border-radius: 3px;
+    padding : 0 30px; 
+    box-sizing: border-box;
+    box-shadow: 0 10px 10px 0 rgba(0,0,0,0.1);
+    cursor: pointer;
+    opacity: 0.7;
+    transition: 0.4s;
+}
+
+#qna > .q_list > ul > li:hover{
+    background-color: #ffffff;
+    transform: translate(-5px,-10px);
+    opacity: 1;
+}
+
+
+/*seciton5 - contact*/
+#contact > div{
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+#contact > div > h3{
+    margin-bottom: 40px;
+}
+
+#contact > div li:nth-child(2){
+    margin: 16px 0;
+}
+
+
+/*footer*/
+footer{
+    text-align: center;
+    padding : 80px 20px;
+    color: #b6b6b6;
 }
 
