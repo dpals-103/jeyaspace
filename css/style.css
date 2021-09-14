@@ -44,7 +44,8 @@ body{
     font-weight: 500;
     font-size: 16px;
     word-spacing: -0.8em;
-    letter-spacing: -0.1rem;
+    letter-spacing: -0.075rem;
+    overflow-x: hidden;
 }
 
 section{
@@ -86,6 +87,7 @@ section{
     text-transform: uppercase;
     font-weight: 700;
     font-size: 2rem;
+    word-spacing: -0.7em;
 }
 
 #home > div:nth-child(2) {
@@ -97,6 +99,8 @@ section{
 
 #home > div:nth-child(2) >img{
     margin-bottom: 25px;
+    width: 90%;
+    margin-top:64px;
 }
 
 #home > div:nth-child(2) > .scroll{
@@ -117,7 +121,7 @@ section{
 #home > div:last-child{
     display: flex;
     align-items: flex-end;
-    height: 765px;
+    height: 680px;
 }
 
 
@@ -137,14 +141,14 @@ section{
 .about_1 .position{
     font-family: 'Newyork';
     letter-spacing: 1rem;
-    font-size: 2.5rem;
+    font-size: 2rem;
     position: absolute;
     top: 90px;
     z-index: 6;
 }
 
 .about_1 .name{
-    font-size: 4rem;
+    font-size: 3.5rem;
     font-weight: 700;
     word-spacing: -0.8em;
     margin-top: 160px;
@@ -155,40 +159,71 @@ section{
 }
 
 .about_2{
-    margin-top: 133px;    
-}
-
-
-.about_2 > ul{
+    margin-top: 133px;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-content: space-between;
-}
-.about_2 > ul > li {
-    text-align: right;
+    align-items: flex-end;
 }
 
-.about_2 > ul > li > span{
-    font-family: 'Newyork';
-    letter-spacing: 1rem;
-    font-size: 2.5rem;
-    text-transform: uppercase;
-    margin-left: 340px;
+.about_2 > span{
     display: inline-block;
+    margin-left: 30px;
+    line-height: 1.5;
 }
 
-.about_2 > ul > li:last-child{
-    font-size: 1rem;
-    text-align: left;
-    margin-left: 30px;
-    line-height: 2;
-}
 
 
 /*section3 - works*/
 #works{
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
+    padding: 80px 20px;
+    
 }
+#works > h3{
+    text-align: center;
+    margin-bottom: 200px;
+}
+
+#works li {
+    display: flex;
+    position: relative;
+    margin-bottom: 80px;
+}
+
+#works li > div:first-child{
+    width: 200px;
+    height: 240px;
+    background-color: #f5f5f5;
+    border-radius: 350px 350px 0 0;
+    position: absolute;
+    left: -10%;
+    z-index: -4;
+}
+
+#works li > div:nth-child(2){
+    margin-right: 180px;
+}
+#works li > div:nth-child(2) > p{
+    font-size: 32px;
+    color: #4C6030;
+    font-weight: 300;
+    margin: 48px 0 16px 0;
+}
+
+#works li > div:nth-child(2) > h6{
+    color: #4C6030;
+    font-weight: 700;
+    margin-bottom: 56px;
+}
+
+#works li > div:nth-child(2) > span{
+    width: 300px;
+    display: inline-block;
+    line-height: 1.5;
+}
+
+#works li > img{
+    width: 640px;
+    height: 240px;
+}
+
