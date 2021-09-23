@@ -1,0 +1,442 @@
+@import url(../css/custom.css);
+@import url(../css/reset.css);
+
+
+@font-face {
+  font-family: 'Noto Sans KR';
+  src: url('/font/NotoSansKR-Light-subset2.woff2') format('woff2'),
+       url('/font/NotoSansKR-Light-subset2.woff') format('woff'),
+       url('/font/NotoSansKR-Light-subset2.ttf') format('ttf');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Noto Sans KR';
+  src: url('/font/NotoSansKR-Medium-subset2.woff2') format('woff2'),
+       url('/font/NotoSansKR-Medium-subset2.woff') format('woff'),
+       url('/font/NotoSansKR-Medium-subset.ttf') format('ttf');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Noto Sans KR';
+  src: url('/font/NotoSansKR-Bold-subset2.woff2') format('woff2'),
+       url('/font/NotoSansKR-Bold-subset2.woff') format('woff'),
+       url('/font/NotoSansKR-Bold-subset.ttf') format('ttf');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Newyork';
+  src: url('/font/Newyork-subset2.woff2') format('woff2'),
+       url('/font/Newyork-subset2.woff') format('woff'),
+       url('/font/Newyork-subset.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html{
+    
+}
+
+body{
+    font-family: 'Noto Sans KR';
+    font-weight: 600;
+    font-size: 16px;
+    word-spacing: -0.8em;
+    letter-spacing: -0.04em; 
+    overflow-x: hidden;
+}
+
+section{
+    padding : 80px 0;
+    box-sizing: border-box;
+}
+
+
+
+/*nav*/
+header{
+    background-color: #ffffff;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+}
+#menu{
+    background-color: #ffffff;
+    width: 1160px;
+    margin : 0 auto;
+}
+#menu > ul{
+    display: flex;
+    justify-content: flex-end;
+}
+
+#menu > ul > li {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 40px;
+    cursor: pointer;
+}
+
+
+
+/*section1 - home*/
+#home{
+    display: flex;
+    justify-content: space-between;
+    padding: 140px 20px 80px 20px;
+}
+
+#home > div > p{
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+#home > div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+#home > div:nth-child(2) >img{
+    margin-bottom: 25px;
+    margin-top:64px;
+}
+
+#home > div:nth-child(2) > .img_1{
+    position: absolute;
+    z-index: 10;
+    top : -10%;
+    transform-origin: bottom center;
+    animation: play-state 20s linear infinite;
+    animation-name: rotate;
+}
+
+@-webkit-keyframes rotate{
+    20%{
+        transform: rotate(72deg);
+    }
+
+    40%{
+        transform: rotate(144deg);
+    }
+    
+    60%{
+        transform: rotate(216deg);
+    }
+    
+    80%{
+        transform:rotate(288deg);
+    }
+    
+    100%{
+        transform:rotate(360deg);
+    }
+
+}
+
+
+
+#home > div:last-child{
+    display: flex;
+    align-items: flex-end;
+    height: 680px;
+}
+
+
+/*section2 - about*/
+.about_1,.about_1>ul, .about_2{
+    display: flex;
+}
+
+.about_1{
+    position: relative;
+    justify-content: space-between;
+}
+.about_1  p{
+    text-transform: uppercase;
+}
+
+.about_1 .position{
+    font-family: 'Newyork';
+    letter-spacing: 1rem;
+    font-size: 2rem;
+    position: absolute;
+    top: 90px;
+    z-index: 6;
+}
+
+.about_1 .name{
+    font-weight: 700;
+    margin-top: 160px;
+}
+
+.about_1 li > figure{
+    width : 100%;
+
+}
+
+.about_1 li:last-child{
+     margin-left: 30px;
+}
+
+.about_2{
+    margin-top: 133px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.about_2 > div{
+    margin-left: 30px;
+}
+
+.about_2 > div > span{
+    line-height: 1.5;
+}
+
+
+/*section3 - works*/
+#works{
+    flex-direction: column;
+    align-items: center;
+    padding: 80px 20px;
+    
+}
+#works > h3{
+    text-align: center;
+    margin-bottom: 200px;
+}
+
+#works li {
+    display: flex;
+    position: relative;
+    margin-bottom: 80px;
+}
+
+#works li > figure{
+    width: 200px;
+    height: 240px;
+    background-color: #f5f5f5;
+    border-radius: 350px 350px 0 0;
+    position: absolute;
+    left: -10%;
+    z-index: -4;
+}
+
+#works li > div:nth-child(2){
+    margin-right: 180px;
+}
+#works li > div:nth-child(2) > p{
+    font-size: 32px;
+    color: #4C6030;
+    font-weight: 300;
+    margin: 32px 0 16px 0;
+}
+
+#works li > div:nth-child(2) > h6{
+    color: #4C6030;
+    font-weight: 700;
+    margin-bottom: 65px;
+}
+
+#works li > div:nth-child(2) > span{
+    width: 300px;
+    display: inline-block;
+    line-height: 1.5;
+}
+
+#works li > div:last-child{
+    position: relative;
+    width: 640px;
+    height: 240px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#works li > div:last-child > figure{
+    height: 100%;
+}
+
+#works li > div:last-child > div {
+    position: absolute;
+    top : 50%;
+    left : 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    line-height: 240px;
+    text-align: center;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+
+#works li > div:last-child:hover > div{
+    opacity: 1;
+    background-color: rgba(79,96,48,0.6);
+    color: #fff;
+}
+
+
+
+
+
+
+
+/*section4 - qna*/ 
+#qna{
+    padding : 80px 20px;
+}
+
+.chat{
+    width: 460px;
+    height: 680px;
+    background-color: #F5F5F5;
+    box-shadow: -30px 30px 100px 0 rgba(0,0,0,0.15);
+    position: relative;
+    padding : 40px;
+    box-sizing: border-box;
+}
+
+.chat::after{
+    content: '';
+    display: block;
+    width: 420px;
+    height: 560px;
+    background-image: url('../img/section4.jpg');
+    position: absolute;
+    z-index: -5;
+    top : 20%;
+    left: 50%;
+}
+
+.chat_list{
+    overflow-x: hidden;
+}
+
+.chat_list > li:not(.answer){
+    transition: all .3s ease-out;
+    opacity: 0;
+    margin: 0 20px 0 0;
+}
+
+.chat_list > li.action{
+    opacity: 1;
+    margin: 20px 0 0 0;
+}
+
+.chat_list .msg_box{
+    display: inline-block;
+    max-width: 350px;
+    padding : 16px;
+    box-sizing: border-box;
+    line-height: 1.5;
+    border-radius: 3px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    margin-bottom: 40px;
+} 
+
+.answer > .mark {
+    background-image: url(/img/section4-2.svg);
+    width: 40px;
+    height: 40px;
+}
+
+.answer > .msg_box{
+    margin-top: .5rem;
+    background-color: #fff;
+}
+
+.answer > .msg_box::after{
+    display: inline-block;
+}
+
+.answer.a1 > .msg_box::after{
+    content: 'dd';
+}
+
+
+
+.question > .msg_box{
+    background-color: #749349;
+    float: right;
+}
+
+.question > .msg_box::after{
+    display: inline-block;
+    color: #fff;
+}
+.question.q1 > .msg_box::after{
+    content: '효주님의 보유 기술이 궁금해요!';
+}
+.question.q2 > .msg_box::after{
+    content: '효주님이 생각하는 본인의 강점은 무엇인가요?';
+}
+.question.q3 > .msg_box::after{
+    content: '작업 시 가장 중요하게 생각하는 부분이 있나요?';
+}
+.q_list{
+    margin-left: 175px;
+}
+
+.q_list > h3{
+    margin-bottom: 16px;
+}
+
+.q_list > ul{
+    margin-top: 307px;
+}
+
+.q_list > ul > li{
+    background-color: #ffffff;
+    line-height: 60px;
+    width: 485px;
+    margin-bottom: 30px;
+    border-radius: 3px;
+    padding : 0 30px; 
+    box-sizing: border-box;
+    box-shadow: 0 10px 10px 0 rgba(0,0,0,0.1);
+    cursor: pointer;
+    opacity: 0.7;
+    transition: 0.4s;
+}
+
+.q_list > ul > li:hover{
+    background-color: #ffffff;
+    transform: translate(-5px,-10px);
+    opacity: 1;
+}
+
+
+/*seciton5 - contact*/
+#contact > div{
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+#contact > div > h3{
+    margin-bottom: 50px;
+}
+
+#contact > div li:nth-child(2){
+    margin: 16px 0;
+}
+
+
+/*footer*/
+footer{
+    text-align: center;
+    padding : 80px 20px;
+    color: #b6b6b6;
+}
+
