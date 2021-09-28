@@ -16,6 +16,7 @@
 /*margin*/
 .mb40{margin-bottom: 40px;}
 .mb80{margin-bottom: 80px;}
+.mb100{margin-bottom: 100px;}
 
 
 /*text*/
@@ -24,13 +25,16 @@
 .title3{font-size: 3.5rem; word-spacing: -0.8em !important;}
 .title4{font-size: 3rem !important;}
 .title5{font-size: 2.5rem !important;}
-.title6{font-size: 2rem; word-spacing: -0.8em; letter-spacing: -0.02em; !important;}
+.title6{font-size: 2rem; word-spacing: -0.8em; letter-spacing: -0.02em !important;}
 
 .sub_title{
     font-family: 'Newyork';
     text-transform: uppercase;
     letter-spacing: 1rem;
 }
+
+
+.material-icons{vertical-align: text-bottom; margin-left: 4px}
 
 
 /*img*/

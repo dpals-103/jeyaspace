@@ -4,36 +4,36 @@
 
 @font-face {
   font-family: 'Noto Sans KR';
-  src: url('/font/NotoSansKR-Light-subset2.woff2') format('woff2'),
-       url('/font/NotoSansKR-Light-subset2.woff') format('woff'),
-       url('/font/NotoSansKR-Light-subset2.ttf') format('ttf');
+  src: url('../font/NotoSansKR-Light-subset2.woff2') format('woff2'),
+       url('../font/NotoSansKR-Light-subset2.woff') format('woff'),
+       url('../font/NotoSansKR-Light-subset2.ttf') format('ttf');
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Noto Sans KR';
-  src: url('/font/NotoSansKR-Medium-subset2.woff2') format('woff2'),
-       url('/font/NotoSansKR-Medium-subset2.woff') format('woff'),
-       url('/font/NotoSansKR-Medium-subset.ttf') format('ttf');
+  src: url('../font/NotoSansKR-Medium-subset2.woff2') format('woff2'),
+       url('../font/NotoSansKR-Medium-subset2.woff') format('woff'),
+       url('../font/NotoSansKR-Medium-subset.ttf') format('ttf');
   font-weight: 600;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Noto Sans KR';
-  src: url('/font/NotoSansKR-Bold-subset2.woff2') format('woff2'),
-       url('/font/NotoSansKR-Bold-subset2.woff') format('woff'),
-       url('/font/NotoSansKR-Bold-subset.ttf') format('ttf');
+  src: url('../font/NotoSansKR-Bold-subset2.woff2') format('woff2'),
+       url('../font/NotoSansKR-Bold-subset2.woff') format('woff'),
+       url('../font/NotoSansKR-Bold-subset.ttf') format('ttf');
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Newyork';
-  src: url('/font/Newyork-subset2.woff2') format('woff2'),
-       url('/font/Newyork-subset2.woff') format('woff'),
-       url('/font/Newyork-subset.ttf') format('ttf');
+  src: url('../font/Newyork-subset2.woff2') format('woff2'),
+       url('../font/Newyork-subset2.woff') format('woff'),
+       url('../font/Newyork-subset.ttf') format('ttf');
   font-weight: normal;
   font-style: normal;
 }
@@ -92,7 +92,7 @@ header{
 #home{
     display: flex;
     justify-content: space-between;
-    padding: 140px 20px 80px 20px;
+    padding: 160px 20px 80px 20px;
 }
 
 #home > div > p{
@@ -202,6 +202,7 @@ header{
 
 .about_2 > div > span{
     line-height: 1.5;
+    font-weight: 300;
 }
 
 
@@ -236,6 +237,7 @@ header{
 #works li > div:nth-child(2){
     margin-right: 180px;
 }
+
 #works li > div:nth-child(2) > p{
     font-size: 32px;
     color: #4C6030;
@@ -253,6 +255,7 @@ header{
     width: 300px;
     display: inline-block;
     line-height: 1.5;
+    font-weight: 300;
 }
 
 #works li > div:last-child{
@@ -277,13 +280,19 @@ header{
     line-height: 240px;
     text-align: center;
     opacity: 0;
-    transition: 0.3s;
+    transition: 0.4s ease-out;
 }
 
 
+#works li > div:last-child:hover{
+     box-shadow: -10px 10px 100px rgba(0,0,0,0.15);
+    transform: translate(10px, -10px);
+}
+
 #works li > div:last-child:hover > div{
     opacity: 1;
-    background-color: rgba(79,96,48,0.6);
+    background-color: rgba(0,0,0,0.5);
+/*    background-color: rgba(79,96,48,0.6);*/
     color: #fff;
 }
 
@@ -304,8 +313,7 @@ header{
     background-color: #F5F5F5;
     box-shadow: -30px 30px 100px 0 rgba(0,0,0,0.15);
     position: relative;
-    padding : 40px;
-    box-sizing: border-box;
+    
 }
 
 .chat::after{
@@ -320,19 +328,35 @@ header{
     left: 50%;
 }
 
-.chat_list{
-    overflow-x: hidden;
+
+
+.chat_list {
+ padding : 40px;
+box-sizing: border-box;
 }
 
-.chat_list > li:not(.answer){
+
+.chat_list > li.question{
     transition: all .3s ease-out;
     opacity: 0;
     margin: 0 20px 0 0;
 }
 
-.chat_list > li.action{
+.chat_list > li.action_1{
     opacity: 1;
-    margin: 20px 0 0 0;
+    margin: 0 0 0 20px;
+}
+
+
+.chat_list > li.answer{
+    transition: all .3s ease-out;
+    opacity: 0;
+    margin: 0 0 0 20px;
+}
+
+.chat_list > li.action_2{
+    opacity: 1;
+    margin: 0 20px 0 0;
 }
 
 .chat_list .msg_box{
@@ -343,50 +367,69 @@ header{
     line-height: 1.5;
     border-radius: 3px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    margin-bottom: 40px;
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: -0.06em;
+    word-spacing: -0.6em;
 } 
 
-.answer > .mark {
-    background-image: url(/img/section4-2.svg);
-    width: 40px;
-    height: 40px;
-}
-
-.answer > .msg_box{
-    margin-top: .5rem;
+.answer > .msg_box,
+.greeting > .msg_box{
     background-color: #fff;
 }
 
-.answer > .msg_box::after{
+.answer > .msg_box::after,
+.greeting > .msg_box::after{
     display: inline-block;
 }
-
-.answer.a1 > .msg_box::after{
-    content: 'dd';
-}
-
 
 
 .question > .msg_box{
     background-color: #749349;
     float: right;
+    margin: 40px 0;
 }
 
 .question > .msg_box::after{
     display: inline-block;
     color: #fff;
 }
+
+.answer > .msg_box::after{
+    display: inline-block;
+    white-space: pre;
+}
+
 .question.q1 > .msg_box::after{
     content: '효주님의 보유 기술이 궁금해요!';
 }
+
+.answer.a1 > .msg_box::after{
+    content: 'HTML, CSS, JavaScript 사용 가능하며,\A어도비 포토샵, 일러스트레이터 및\A피그마를 활용한 UI/UX 작업과 협업 가능합니다. ';
+}
+
+
 .question.q2 > .msg_box::after{
     content: '효주님이 생각하는 본인의 강점은 무엇인가요?';
 }
+
+.answer.a2 > .msg_box::after{
+    content: '디자이너로써의 업무경험과 \A퍼블리셔로써의 업무경험,\A 그리고 백엔드 관련 학습경험을 통해 \A프로젝트를 개발함에 있어 다양한 포지션과\A 원활한 커뮤니케이션이 가능하다는 것이\A저의 가장 큰 장점입니다. \a\a특히, \a디자이너,퍼블리셔,개발자 간의 스케쥴 조율에 있어\a 전체적인 개발 흐름을 파악하는 것이\a신속한 테스팅 진행과\a 프로젝트를 큰 마찰없이 진행할 수 있는\a중요한 포인트라고 생각합니다. ';
+}
+
 .question.q3 > .msg_box::after{
     content: '작업 시 가장 중요하게 생각하는 부분이 있나요?';
 }
+
+.answer.a3 > .msg_box::after{
+    content: '확장성을 고려한 코드 작성도 중요하게 생각하지만,\a약속된 일정에 맞게 작업하는 걸 최우선을 생각합니다.\a\a 스케쥴을 정할 때 수정사항을 처리하는 시간까지\a 감안하여 작업하는 쪽으로 기준을 세우는 편입니다.';
+}
+
 .q_list{
-    margin-left: 175px;
+    margin-left: 240px;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 .q_list > h3{
@@ -394,21 +437,22 @@ header{
 }
 
 .q_list > ul{
-    margin-top: 307px;
+    margin-top: 160px;
 }
 
 .q_list > ul > li{
     background-color: #ffffff;
     line-height: 60px;
-    width: 485px;
+    width: 420px;
     margin-bottom: 30px;
     border-radius: 3px;
     padding : 0 30px; 
     box-sizing: border-box;
     box-shadow: 0 10px 10px 0 rgba(0,0,0,0.1);
     cursor: pointer;
-    opacity: 0.7;
+    opacity: 0.6;
     transition: 0.4s;
+    text-align: center;
 }
 
 .q_list > ul > li:hover{
