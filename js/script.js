@@ -75,8 +75,8 @@ $(document).ready(function () {
 
     // --qna 채팅창 슬림스크롤 적용//
     $('.chat_list').slimScroll({
-        height: '660px',
-        color: '#749349',
+        height: '630px',
+        color: '#80AEB1',
         railOpacity: 0.5,
         wheelStep: 10
     });

@@ -44,7 +44,7 @@ html{
 
 body{
     font-family: 'Noto Sans KR';
-    font-weight: 600;
+    font-weight: 500;
     font-size: 16px;
     word-spacing: -0.8em;
     letter-spacing: -0.04em; 
@@ -52,7 +52,7 @@ body{
 }
 
 section{
-    padding : 80px 0;
+    padding :100px 20px 80px 20px;
     box-sizing: border-box;
 }
 
@@ -92,12 +92,37 @@ header{
 #home{
     display: flex;
     justify-content: space-between;
-    padding: 160px 20px 80px 20px;
 }
 
-#home > div > p{
-    text-transform: uppercase;
-    font-weight: 700;
+#home .h-left> div{
+    margin-right: 20px;
+}
+
+#home .h-right> div{
+    margin-left: 20px;
+}
+
+#home .circle{
+    width:20px;
+    height: 20px;
+    border-radius: 100px;
+    border : 1px solid #5c5c5c; 
+}
+
+#home hr{
+    width: 0px;
+    height: 100px;
+    border : 1px solid #ffffff;
+    background-color: #5c5c5c; 
+}
+
+#home p{
+    font-size: 24px;
+    line-height: 20px;
+    font-family: "Newyork";
+    word-spacing: 4px;
+    letter-spacing: 0.1px;
+    font-weight: 600;
 }
 
 #home > div:nth-child(2) {
@@ -108,18 +133,19 @@ header{
     position: relative;
 }
 
-#home > div:nth-child(2) >img{
-    margin-bottom: 25px;
-    margin-top:64px;
-}
 
 #home > div:nth-child(2) > .img_1{
     position: absolute;
     z-index: 10;
-    top : -10%;
+    top : 10%;
     transform-origin: bottom center;
     animation: play-state 20s linear infinite;
     animation-name: rotate;
+    width:107%;
+}
+
+#home > div:nth-child(2) > .img_2{
+    width:80%;
 }
 
 @-webkit-keyframes rotate{
@@ -145,8 +171,6 @@ header{
 
 }
 
-
-
 #home > div:last-child{
     display: flex;
     align-items: flex-end;
@@ -155,17 +179,39 @@ header{
 
 
 /*section2 - about*/
-.about_1,.about_1>ul, .about_2{
-    display: flex;
+
+#about > div {
+    justify-content: center;
+    align-items: center;
+} 
+#about figure{
+    width: 350px;
+    height: 350px;
+    background-color: #f2f2f2;
+    border-radius: 300px 170px 200px 100px;
+    overflow: hidden;
+    margin-right: 80px;
 }
 
-.about_1{
-    position: relative;
-    justify-content: space-between;
+
+#about article > span{
+    line-height: 1.5em;
+}
+#about article > span:first-child{
+    letter-spacing: 7.7px;
 }
 
+#about ul{
+    margin: 40px 0;
+    padding-left: 20px;
+    box-sizing: border-box;
+    list-style-type: circle;
+}
+#about li{
+    margin-bottom: 0.5em;
+}
 
-.about_1 > div{
+/* .about_1 > div{
     margin: 0 40px 0 0;
     opacity: 0;
     transition: .8s all ease-out;
@@ -186,144 +232,11 @@ header{
 #about .on_2{
     margin: 0 40px 0 0;
     opacity: 1;
-}
+} */
 
-.about_1  p{
-    text-transform: uppercase;
-}
-
-.about_1 .position{
-    font-family: 'Newyork';
-    letter-spacing: 1rem;
-    font-size: 2rem;
-    position: absolute;
-    top: 90px;
-    z-index: 6;
-}
-
-.about_1 .name{
-    font-weight: 700;
-    margin-top: 160px;
-}
-
-
-.about_1 li > figure{
-    width : 100%;
-
-}
-
-.about_1 li:last-child{
-     margin-left: 30px;
-}
-
-
-
-.about_2{
-    margin-top: 133px;
-    display: flex;
-    align-items: flex-end;
-}
-
-.about_2 > div{
-    margin-left: 30px;
-}
-
-.about_2 > div > span{
-    line-height: 1.5;
-    font-weight: 300;
-}
 
 
 /*section3 - works*/
-#works{
-    flex-direction: column;
-    align-items: center;
-    padding: 80px 20px;
-    
-}
-#works > h3{
-    text-align: center;
-    margin-bottom: 200px;
-}
-
-#works li {
-    display: flex;
-    position: relative;
-    margin-bottom: 80px;
-}
-
-#works li > figure{
-    width: 200px;
-    height: 240px;
-    background-color: #f5f5f5;
-    border-radius: 350px 350px 0 0;
-    position: absolute;
-    left: -10%;
-    z-index: -4;
-}
-
-#works li > div:nth-child(2){
-    margin-right: 180px;
-}
-
-#works li > div:nth-child(2) > p{
-    font-size: 32px;
-    color: #4C6030;
-    font-weight: 300;
-    margin: 32px 0 16px 0;
-}
-
-#works li > div:nth-child(2) > h6{
-    color: #4C6030;
-    font-weight: 700;
-    margin-bottom: 65px;
-}
-
-#works li > div:nth-child(2) > span{
-    width: 300px;
-    display: inline-block;
-    line-height: 1.5;
-    font-weight: 300;
-}
-
-#works li > div:last-child{
-    position: relative;
-    width: 640px;
-    height: 240px;
-    border-radius: 3px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-#works li > div:last-child > figure{
-    height: 100%;
-}
-
-#works li > div:last-child > div {
-    position: absolute;
-    top : 50%;
-    left : 50%;
-    transform: translate(-50%,-50%);
-    width: 100%;
-    line-height: 240px;
-    text-align: center;
-    opacity: 0;
-    transition: 0.4s ease-out;
-}
-
-
-#works li > div:last-child:hover{
-     box-shadow: -10px 10px 100px rgba(0,0,0,0.15);
-    transform: translate(10px, -10px);
-}
-
-#works li > div:last-child:hover > div{
-    opacity: 1;
-    background-color: rgba(0,0,0,0.5);
-/*    background-color: rgba(79,96,48,0.6);*/
-    color: #fff;
-}
-
 
 
 
@@ -333,30 +246,37 @@ header{
 /*section4 - qna*/ 
 #qna{
     padding : 80px 20px;
+    position: relative;
 }
 
 .chat{
     width: 460px;
-    height: 680px;
-    background-color: #F5F5F5;
+    height: 650px;
+    background-color: rgba(245,245,245,.8);
     box-shadow: -30px 30px 100px 0 rgba(0,0,0,0.15);
     position: relative;
     
 }
 
-.chat::after{
-    content: '';
-    display: block;
-    width: 420px;
-    height: 560px;
-    background-image: url('../img/section4.jpg');
+#qna > figure{
     position: absolute;
-    z-index: -5;
-    top : 20%;
-    left: 50%;
 }
 
+.deco_1{
+    width: 30%;
+    top: 24%;
+    left:-8%;
+}
 
+.deco_2{
+    width: 28%;
+    top: 60%;
+    left: 43%;
+}
+
+.qna_con{
+    justify-content: center;
+}
 
 .chat_list {
  padding : 40px;
@@ -413,7 +333,7 @@ box-sizing: border-box;
 
 
 .question > .msg_box{
-    background-color: #749349;
+    background-color: #80AEB1;
     float: right;
     margin: 40px 0;
 }
@@ -454,10 +374,7 @@ box-sizing: border-box;
 }
 
 .q_list{
-    margin-left: 240px;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
+    margin-left: 40px;
 }
 
 .q_list > h3{
@@ -465,7 +382,8 @@ box-sizing: border-box;
 }
 
 .q_list > ul{
-    margin-top: 160px;
+    align-self: flex-start;
+    margin-top:40px;
 }
 
 .q_list > ul > li{
@@ -480,7 +398,7 @@ box-sizing: border-box;
     cursor: pointer;
     opacity: 0.6;
     transition: 0.4s;
-    text-align: center;
+    text-align: left;
 }
 
 .q_list > ul > li:hover{
