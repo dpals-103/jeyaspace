@@ -73,11 +73,140 @@ $(document).ready(function () {
 
 
 
+    //슬라이드
+
+    var slideList = document.querySelector('.slide-list'),
+    slide = document.querySelectorAll('.slide-list li'),
+    slideCount = slide.length,
+    slideWidth = 320,
+    slideMargin = 40,
+    currenIndex = 0,
+    prevBtn = document.querySelector('.prev'),
+    nextBtn = document.querySelector('.next');
+
+    listClone();
+
+    var currentSlide = document.querySelectorAll('.slide-list li');
+        var firstIdx = currenIndex ;
+        var firstSlide =  slide[firstIdx];
+        var prevSlide =  slide[firstIdx - 1];
+
+        firstSlide.classList.add('active');
+
+    function listClone(){
+        for (var i = 0; i < slideCount; i++ ){
+            
+            var cloneSlide = slide[i].cloneNode(true);
+            cloneSlide.classList.add('clone');
+
+            slideList.appendChild(cloneSlide);
+        }
+        for (var i = slideCount - 1; i >=0; i-- ){
+
+            var cloneSlide = slide[i].cloneNode(true);
+            cloneSlide.classList.add('clone');
+
+            slideList.prepend(cloneSlide);
+        }
+        updateWidth();
+        setInitial(); 
+        setTimeout(function(){
+            slideList.classList.add('active');
+        },100)
+        
+    }
+
+    function updateWidth(){
+        var currentSlide = document.querySelectorAll('.slide-list li');
+        var newSlideCount = currentSlide.length;
+
+        var listWidth = (slideWidth + slideMargin) * newSlideCount + 'px';
+        slideList.style.width = listWidth;
+    }
+
+    function setInitial(){
+
+        var initialTranslateValue = -(slideWidth + slideMargin) * slideCount;
+
+        slideList.style.transform = 'translateX('+initialTranslateValue + 'px)';
+    }
+
+
+    nextBtn.addEventListener('click',function(){
+        slider(currenIndex + 1);
+    });
+    
+    prevBtn.addEventListener('click',function(){
+        slider(currenIndex - 1);
+    });
+
+
+    function slider(num){
+        slideList.style.left = -num * (slideWidth + slideMargin) + 'px';
+        currenIndex = num;        
+
+        var currentSlide = document.querySelectorAll('.slide-list li');
+        var firstIdx = currenIndex ;
+        var firstSlide =  slide[firstIdx];
+        var prevSlide =  slide[firstIdx - 1];
+
+        if (firstIdx < 0){
+            firstSlide = slide[-firstIdx]
+        } else if (firstIdx == slideCount){
+            firstSlide = slide[0];
+        }
+
+        // setTimeout(function(){
+        //     prevSlide.classList.remove('active');
+        // },50);
+
+        prevSlide.classList.remove('active');
+        
+        if (currenIndex == slideCount || currenIndex == -slideCount){
+            setTimeout(function(){
+                slideList.classList.remove('active');
+                slideList.style.left = '0px';
+                currenIndex = 0;
+            },500);
+            setTimeout(function(){
+                slideList.classList.add('active');
+            },600);
+        }
+
+        setTimeout(function(){
+            firstSlide.classList.add('active');
+        },0);
+        
+    }
+
+    // function slideScale(num){
+
+    //     var currentSlide = document.querySelectorAll('.slide-list li');
+    //     var firstIdx = currenIndex ;
+    //     var firstSlide =  slide[firstIdx];
+    //     var prevSlide =  slide[firstIdx - 1];
+
+    //     if (firstIdx < 0){
+    //         firstSlide = slide[-firstIdx]
+    //     } else if (firstIdx == slideCount){
+    //         firstSlide = slide[0];
+    //     }
+
+       
+
+    //     setTimeout(function(){
+    //         firstSlide.classList.add('active');
+    //     },0)
+    //     setTimeout(function(){
+    //         prevSlide.classList.remove('active');
+    //     },100)
+    // }
+
+
     // --qna 채팅창 슬림스크롤 적용//
     $('.chat_list').slimScroll({
-        height: '630px',
-        color: '#80AEB1',
-        railOpacity: 0.5,
+        height: '710px',
+        color: '#f6f6f6',
         wheelStep: 10
     });
 
@@ -127,7 +256,7 @@ $(document).ready(function () {
 
         //답변글 추가
         setTimeout(function () {
-            $('.chat_list').append('<li class="answer a1"><div class="msg_box"></div></li>');
+            $('.chat_list').append('<li class="answer a1"><div class="selfie"></div><div class="msg_box"></div></li>');
         }, 1000);
 
         //답변글에 css 효과 클래스명 추가
@@ -144,7 +273,7 @@ $(document).ready(function () {
 
         //답변글 추가
         setTimeout(function () {
-            $('.chat_list').append('<li class="answer a2"><div class="msg_box"></div></li>');
+            $('.chat_list').append('<li class="answer a2"><div class="selfie"></div><div class="msg_box"></div></li>');
         }, 1000);
 
         //답변글에 css 효과 클래스명 추가
@@ -162,7 +291,7 @@ $(document).ready(function () {
 
         //답변글 추가
         setTimeout(function () {
-            $('.chat_list').append('<li class="answer a3"><div class="msg_box"></div></li>');
+            $('.chat_list').append('<li class="answer a3"><div class="selfie"></div><div class="msg_box"></div></li>');
         }, 1000);
 
         //답변글에 css 효과 클래스명 추가
