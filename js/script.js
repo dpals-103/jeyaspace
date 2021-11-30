@@ -75,23 +75,26 @@ $(document).ready(function () {
 
     //슬라이드
 
+
+
     var slideList = document.querySelector('.slide-list'),
     slide = document.querySelectorAll('.slide-list li'),
     slideCount = slide.length,
     slideWidth = 320,
     slideMargin = 40,
-    currenIndex = 0,
+    currentIndex = 0,
     prevBtn = document.querySelector('.prev'),
     nextBtn = document.querySelector('.next');
 
     listClone();
 
     var currentSlide = document.querySelectorAll('.slide-list li');
-        var firstIdx = currenIndex ;
+        var firstIdx = currentIndex ;
         var firstSlide =  slide[firstIdx];
         var prevSlide =  slide[firstIdx - 1];
 
         firstSlide.classList.add('active');
+
 
     function listClone(){
         for (var i = 0; i < slideCount; i++ ){
@@ -127,89 +130,90 @@ $(document).ready(function () {
     function setInitial(){
 
         var initialTranslateValue = -(slideWidth + slideMargin) * slideCount;
-
         slideList.style.transform = 'translateX('+initialTranslateValue + 'px)';
     }
 
 
     nextBtn.addEventListener('click',function(){
-        slider(currenIndex + 1);
-    });
-    
-    prevBtn.addEventListener('click',function(){
-        slider(currenIndex - 1);
+
+        slider(currentIndex + 1);
+        nextSlider(currentIndex);
+
     });
 
+
+    var currentSlide = document.querySelectorAll('.slide-list li');
+    
+
+    function nextSlider(num){
+        var nextSlide = slide[num];
+
+        if (num < 0){
+            nextSlide = slide[-num]
+        } else if (num == slideCount){
+            nextSlide = slide[0];
+        }
+
+        setTimeout(function(){
+            $('.slide-list > li').removeClass('active');
+        },0);
+        setTimeout(function(){
+            nextSlide.classList.add('active');
+        },100);
+        
+        // slide[num-1].classList.remove('active');
+
+    }
+    
+    prevBtn.addEventListener('click',function(){
+        slider(currentIndex - 1);
+        prevSlider(currentIndex);
+    });
+
+   
+
+    function prevSlider(num){
+        
+        var prevSlide =  currentSlide[num+3];
+
+        if (num > 0){
+            prevSlide = slide[num];
+        } else if (num == -slideCount){
+            prevSlide = slide[0];
+        }
+
+        setTimeout(function(){
+            $('.slide-list > li').removeClass('active');
+        },0);
+
+        setTimeout(function(){
+            prevSlide.classList.add('active');
+        },100);
+
+    }
 
     function slider(num){
         slideList.style.left = -num * (slideWidth + slideMargin) + 'px';
-        currenIndex = num;        
-
-        var currentSlide = document.querySelectorAll('.slide-list li');
-        var firstIdx = currenIndex ;
-        var firstSlide =  slide[firstIdx];
-        var prevSlide =  slide[firstIdx - 1];
-
-        if (firstIdx < 0){
-            firstSlide = slide[-firstIdx]
-        } else if (firstIdx == slideCount){
-            firstSlide = slide[0];
-        }
-
-        // setTimeout(function(){
-        //     prevSlide.classList.remove('active');
-        // },50);
-
-        prevSlide.classList.remove('active');
+        currentIndex = num;        
         
-        if (currenIndex == slideCount || currenIndex == -slideCount){
+        if (currentIndex == slideCount || currentIndex == -slideCount){
+
             setTimeout(function(){
                 slideList.classList.remove('active');
                 slideList.style.left = '0px';
-                currenIndex = 0;
+                currentIndex = 0;
             },500);
             setTimeout(function(){
                 slideList.classList.add('active');
             },600);
-        }
-
-        setTimeout(function(){
-            firstSlide.classList.add('active');
-        },0);
-        
     }
+}
 
-    // function slideScale(num){
-
-    //     var currentSlide = document.querySelectorAll('.slide-list li');
-    //     var firstIdx = currenIndex ;
-    //     var firstSlide =  slide[firstIdx];
-    //     var prevSlide =  slide[firstIdx - 1];
-
-    //     if (firstIdx < 0){
-    //         firstSlide = slide[-firstIdx]
-    //     } else if (firstIdx == slideCount){
-    //         firstSlide = slide[0];
-    //     }
-
-       
-
-    //     setTimeout(function(){
-    //         firstSlide.classList.add('active');
-    //     },0)
-    //     setTimeout(function(){
-    //         prevSlide.classList.remove('active');
-    //     },100)
-    // }
 
 
     // --qna 채팅창 슬림스크롤 적용//
     $('.chat_list').slimScroll({
-<<<<<<< HEAD
-        height: '540px',
-=======
-        height: '710px',
->>>>>>> 4001e5e8d6281a65cf47c9515e3b0f6a5962f4e4
+        height: '580px',
         color: '#f6f6f6',
         wheelStep: 10
     });
