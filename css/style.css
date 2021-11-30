@@ -79,6 +79,10 @@ header{
 }
 
 #menu > ul > li {
+<<<<<<< HEAD
+=======
+    width: 80px;
+>>>>>>> 4001e5e8d6281a65cf47c9515e3b0f6a5962f4e4
     height: 100%;
     display: inline-block;
     margin-left: 40px;
@@ -337,6 +341,7 @@ header{
 
 /*section3 - works*/
 
+<<<<<<< HEAD
 .works-con{
     height: 320px;
     display: flex;
@@ -344,6 +349,19 @@ header{
     padding-right: 0;
 }
 
+=======
+#works{
+    height: 85vh;
+}
+
+.works-con{
+    height: 320px;
+    display: flex;
+    align-items: flex-end;
+    padding-right: 0;
+}
+
+>>>>>>> 4001e5e8d6281a65cf47c9515e3b0f6a5962f4e4
 .works-con .work-comment{
     min-width: 350px;
     margin-left: 50px;
@@ -465,7 +483,11 @@ header{
 
 .chat{
     width: 560px;
+<<<<<<< HEAD
     height: 560px;
+=======
+    height: 640px;
+>>>>>>> 4001e5e8d6281a65cf47c9515e3b0f6a5962f4e4
     border-radius: 10px;
     box-shadow: 0 8px 15px 0 rgba(0,0,0,0.1);
     position: relative;
@@ -650,8 +672,13 @@ flex-direction: column;
 .bg-circle-3{
     width: 950px;
     height: 950px;
+<<<<<<< HEAD
     top: -165px;
     left: -260px;
+=======
+    top: -12%;
+    left: -5%;
+>>>>>>> 4001e5e8d6281a65cf47c9515e3b0f6a5962f4e4
 }
 
 

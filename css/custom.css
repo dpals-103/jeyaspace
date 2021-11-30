@@ -26,9 +26,15 @@
 
 /*padding*/
 .pt60 {padding-top: 60px; box-sizing: border-box;}
+<<<<<<< HEAD
 .pt80 {padding-top: 80px; box-sizing: border-box;}
 .pt100 {padding-top: 100px; box-sizing: border-box;}
 .pb80 {padding-bottom: 80px; box-sizing: border-box;}
+=======
+.pt80 {padding-top: 60px; box-sizing: border-box;}
+.pt100 {padding-top: 100px; box-sizing: border-box;}
+.pb80 {padding-bottom: 60px; box-sizing: border-box;}
+>>>>>>> 4001e5e8d6281a65cf47c9515e3b0f6a5962f4e4
 
 /*text*/
 .title1,.title2,.title3,.title4,.title5,.title6,.title7{font-weight: 600;}
