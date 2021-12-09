@@ -380,12 +380,6 @@ header{
     box-sizing: border-box;
 }
 
-.works-con .project1.active,
-.works-con .project2.active,
-.works-con .project3.active{
-    display: block;
-}
-
 .work-comment h4{
     margin-top: 100px;
 }

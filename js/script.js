@@ -76,6 +76,8 @@ $(document).ready(function () {
     //슬라이드
 
 
+    $('.work-comment').hide();
+    $('.work-comment:first-child').show();
 
     var slideList = document.querySelector('.slide-list'),
     slide = document.querySelectorAll('.slide-list li'),
@@ -85,6 +87,7 @@ $(document).ready(function () {
     currentIndex = 0,
     prevBtn = document.querySelector('.prev'),
     nextBtn = document.querySelector('.next');
+
 
     listClone();
 
@@ -135,18 +138,19 @@ $(document).ready(function () {
 
 
     nextBtn.addEventListener('click',function(){
-
         slider(currentIndex + 1);
         nextSlider(currentIndex);
-
+        nextComment(currentIndex);
     });
 
 
     var currentSlide = document.querySelectorAll('.slide-list li');
     
+    
 
     function nextSlider(num){
         var nextSlide = slide[num];
+        
 
         if (num < 0){
             nextSlide = slide[-num]
@@ -156,15 +160,20 @@ $(document).ready(function () {
 
         setTimeout(function(){
             $('.slide-list > li').removeClass('active');
+            $('.project1').fadeOut();
         },0);
         setTimeout(function(){
             nextSlide.classList.add('active');
+            $('.project2').fadeIn();
         },100);
         
         // slide[num-1].classList.remove('active');
 
     }
+
+
     
+
     prevBtn.addEventListener('click',function(){
         slider(currentIndex - 1);
         prevSlider(currentIndex);
@@ -213,7 +222,7 @@ $(document).ready(function () {
 
     // --qna 채팅창 슬림스크롤 적용//
     $('.chat_list').slimScroll({
-        height: '580px',
+        height: '520px',
         color: '#f6f6f6',
         wheelStep: 10
     });
